@@ -1,0 +1,26 @@
+{
+	"name": "shortstr",
+	"version": "0.1.0",
+	"description": "Reduce length of strings",
+	"keywords": ["reduce", "short", "shorten", "string", "str"],
+	"main": "index.js",
+	"scripts": {
+		"test": "make test"
+	},
+	"author": "Michael Wittig <post@michaelwittig.info>",
+	"license": "MIT",
+	"dependencies": {
+		"assert-plus": "0.1.5",
+		"bitstring": "1.0.0"
+	},
+	"devDependencies": {
+		"mocha": "2.0.1",
+		"jslint": "0.6.5",
+		"madge": "0.3.5",
+		"npmedge": "0.2.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/michaelwittig/node-shortstr.git"
+	}
+}
