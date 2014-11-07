@@ -11,7 +11,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"assert-plus": "0.1.5",
-		"bitstring": "1.0.0"
+		"bit-buffer": "0.0.3"
 	},
 	"devDependencies": {
 		"mocha": "2.0.1",
