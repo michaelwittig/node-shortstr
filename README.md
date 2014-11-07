@@ -15,7 +15,7 @@ And you can also apply this transformation twice and map `"abcd"` back to `"0001
 
 **Real world example**
 
-Your String contains chars of `"0123456789,.-"` and is you want to transform to `"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-+"`
+Your String contains chars of `"0123456789,.-"` and you want to transform to `"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-+"`
 		
 `"-122343.45,94323443,6343.08,934762.3,-8275234,221302234322,-53490269003"` becomes 
 
@@ -33,15 +33,15 @@ npm install shortstr
 var shortstr = require("shortstr");
 ```
 
-Create ashortener that maps from `"01"` to `"abcd"` for inputs from zero to 8 chars.
+Create ashortener that maps from `"01"` to `"abcd"` with a maximum input length of `8` chars.
 
 ```javascript
 var shortener = shortstr.create("01", "abcd", 8); // create shortener
 
-shortener.shorten("00011011");
-// => "abcd"
+shortener.shorten("00011011"); // shorten the original String
+// => "acacbd" or similar
 
-shortener.expand("abcd");
+shortener.expand("acacbd"); // expand the shortened String to the original String
 // => "00011011"
 ```
 
@@ -49,9 +49,9 @@ shortener.expand("abcd");
 
 ### create(from, to, fromMaxLength)
 
-* `from`: `String` of chars that are allowed to be shortened (optiomal length is something like 2, 4, 8, 16, 32, 64, ...)
-* `to`: `String` of chars used to shorten (to.length > from.length, optiomal length is something like 2, 4, 8, 16, 32, 64, ...)
-* `fromMaxLength`: Maximum length `Number` of String that can be shortened (optiomal fromMaxLength is something like 2, 4, 8, 16, 32, 64, ...)
+* `from`: `String` of chars that are allowed to be shortened (optimal length is something like 2, 4, 8, 16, 32, 64, ...)
+* `to`: `String` of chars used to shorten (to.length > from.length, optimal length is something like 2, 4, 8, 16, 32, 64, ...)
+* `fromMaxLength`: Maximum length `Number` of String that can be shortened (optimal fromMaxLength is something like 2, 4, 8, 16, 32, 64, ...)
 
 ## Contribution
 
