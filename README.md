@@ -4,7 +4,7 @@
 
 # shortstr
 
-Imagine you have a string `"00011011"` and want to reduce the length of the string without losing information. You could map this string to `"abcd"` which is 50% smaller than before. But you can also apply this transformation twice and map `"abcd"` back to `"00011011"`. So whenever you have a limited set of inpiut characters you can reduce the length of the string by using `shortstr` module.
+Imagine you have a string `"00011011"` and want to reduce the length of the string without losing information. You could map this string to `"abcd"` which is 50% smaller than before. But you can also apply this transformation twice and map `"abcd"` back to `"00011011"`. So whenever you have a limited set of input characters you can reduce the length of the string by using `shortstr` module.
 
 ## Installation
 
@@ -16,8 +16,12 @@ npm install shortstr
 
 ```javascript
 var shortstr = require("shortstr");
+```
 
-var shortener = shortstr.create("01", "abcd"); // create shortener
+Create ashortener that maps from `"01"` to `"abcd"` for inputs from zero to 8 chars.
+
+```javascript
+var shortener = shortstr.create("01", "abcd", 8); // create shortener
 
 shortener.shorten("00011011");
 // => "abcd"
@@ -28,10 +32,11 @@ shortener.expand("abcd");
 
 ## API
 
-### create(from, to)
+### create(from, to, fromMaxLength)
 
-* `from`: String
-* `to`: String
+* `from`: `String` of chars that are allowed to be shortened (optiomal length is something like 2, 4, 8, 16, 32, 64, ...)
+* `to`: `String` of chars used to shorten (to.length > from.length, optiomal length is something like 2, 4, 8, 16, 32, 64, ...)
+* `fromMaxLength`: Maximum length `Number` of String that can be shortened (optiomal fromMaxLength is something like 2, 4, 8, 16, 32, 64, ...)
 
 ## Contribution
 

@@ -76,8 +76,7 @@ exports.create = function(from, to, fromMaxLength) {
 	"use strict";
 	assert.string(from, "from");
 	assert.string(to, "to");
-	assert.optionalNumber(fromMaxLength, "fromMaxLength");
-	fromMaxLength = fromMaxLength || 64;
+	assert.number(fromMaxLength, "fromMaxLength");
 	if (from.length < 2) {
 		throw new Error("from must have at least 2 characters");
 	}
