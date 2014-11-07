@@ -120,4 +120,22 @@ describe("shortstr", function() {
 			assert.equal(shortener.expand(sho), str);
 		});
 	});
+	describe("real world", function() {
+		it("numbers and separator", function() {
+			var str = "-123.45,2343,2343.08,934762.3,-8275234",
+				shortener = shortstr.create("0123456789,.-", "0123456789abcdefghijklmnopqrstuv", 64),
+				sho = shortener.shorten(str);
+			console.log(str + " => " + sho);
+			assert.ok(sho.length <= str.length);
+			assert.equal(shortener.expand(sho), str);
+		});
+		it("numbers and separator 2", function() {
+			var str = "-122343.45,94323443,6343.08,934762.3,-8275234,221302234322,-53490269003",
+				shortener = shortstr.create("0123456789,.-", "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-+", 128),
+				sho = shortener.shorten(str);
+			console.log(str + " => " + sho);
+			assert.ok(sho.length <= str.length);
+			assert.equal(shortener.expand(sho), str);
+		});
+	});
 });

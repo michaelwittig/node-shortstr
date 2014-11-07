@@ -4,7 +4,22 @@
 
 # shortstr
 
-Imagine you have a string `"00011011"` and want to reduce the length of the string without losing information. You could map this string to `"abcd"` which is 50% smaller than before. But you can also apply this transformation twice and map `"abcd"` back to `"00011011"`. So whenever you have a limited set of input characters you can reduce the length of the string by using `shortstr` module.
+Imagine you have a string `"00011011"` containing only the chars `"0"` and `"1"`. You want to reduce the length of the string without losing information. You could map this string to `"abcd"` which is 50% smaller than before by using this transformation table.
+
+	"00" => "a"
+	"01" => "b"
+	"10" => "c"
+	"11" => "d"
+
+And you can also apply this transformation twice and map `"abcd"` back to `"00011011"`. So whenever you have a limited set of input characters you can reduce the length of the string by using this `shortstr` module.
+
+**Real world example**
+
+Your String contains chars of `"0123456789,.-"` and is you want to transform to `"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-+"`
+		
+`"-122343.45,94323443,6343.08,934762.3,-8275234,221302234322,-53490269003"` becomes 
+
+`"7Nx83dblqizc4dGdQI0GVgD9XEcan93Fy438Ogz8an3Bwo903"` which is 30% shorter!
 
 ## Installation
 
